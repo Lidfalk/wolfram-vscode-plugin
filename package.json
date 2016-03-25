@@ -1,6 +1,6 @@
 {
     "name": "Wolfram",
-    "description": "Wolfram alpha plugin for VSCode",
+    "description": "Wolfram|Alpha plugin for VSCode",
     "version": "0.1.0",
     "publisher": "lidfalk",
     "engines": {
@@ -30,6 +30,6 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/todo"
+        "url": "https://github.com/Lidfalk/wolfram-vscode-plugin"
     }
 }
