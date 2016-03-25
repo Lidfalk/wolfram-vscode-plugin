@@ -68,6 +68,10 @@ function activate(context) {
 			return; // No open text editor
 		}
 
+        if (editor.selections.length > 1) {
+            return vscode.window.showInformationMessage('Multi-cursor selection not supported.');
+        }
+        
 		var selection = editor.selection;
 		var text = editor.document.getText(selection);
         
