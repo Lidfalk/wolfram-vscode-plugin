@@ -18,5 +18,6 @@ In order for the plugin to work you must sign up for a free Wolfram|Alpha develo
 Select the text representing the query, press F1 and the run command wolfram. The result from the query will be inserted on the next row in the editor. If no text is select the entire line will be used as input.
 
 ## License
-[MIT](LICENSE)
+The source code to this extension is available on https://github.com/Lidfalk/wolfram-vscode-plugin and licensed under the [MIT](LICENSE) license. 
+
 
