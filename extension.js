@@ -58,43 +58,43 @@ function isEmpty(string) {
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	var disposable = vscode.commands.registerCommand('extension.wolfram', function () {
-		
-		var editor = vscode.window.activeTextEditor;
-		if (!editor) {
-			return; // No open text editor
-		}
+    // The command has been defined in the package.json file
+    // Now provide the implementation of the command with  registerCommand
+    // The commandId parameter must match the command field in package.json
+    var disposable = vscode.commands.registerCommand('extension.wolfram', function () {
+        
+        var editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            return; // No open text editor
+        }
 
         if (editor.selections.length > 1) {
             return vscode.window.showInformationMessage('Multi-cursor selection not supported.');
         }
         
-		var selection = editor.selection;
-		var text = editor.document.getText(selection);
+        var selection = editor.selection;
+        var text = editor.document.getText(selection);
         
-		if (!text.length) {
+        if (!text.length) {
             text = editor.document.lineAt(selection.start.line).text
             if (!text.trim().length) {
                 return vscode.window.showInformationMessage('No text selected.');
             }
             
-		}
+        }
 
-		makeWolframQuery(text)
-			.then((result) => {
-				editor.edit((textEditor) => {
-					textEditor.insert(selection.end, "\n" + result);
-				}).then((didApply) => {
-					if (!didApply) {
-						return vscode.window.showInformationMessage('Failed to insert result.');
-					}
-				});
-			}).catch(vscode.window.showInformationMessage);
-	});
-	context.subscriptions.push(disposable);
+        makeWolframQuery(text)
+            .then((result) => {
+                editor.edit((textEditor) => {
+                    textEditor.insert(selection.end, "\n" + result);
+                }).then((didApply) => {
+                    if (!didApply) {
+                        return vscode.window.showInformationMessage('Failed to insert result.');
+                    }
+                });
+            }).catch(vscode.window.showInformationMessage);
+    });
+    context.subscriptions.push(disposable);
 }
 
 exports.activate = activate;
