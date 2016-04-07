@@ -1,36 +1,41 @@
 {
-    "name": "Wolfram",
-    "description": "Wolfram|Alpha plugin for VSCode",
-    "version": "0.1.2",
-    "publisher": "lidfalk",
-    "icon": "icon.png",
-    "engines": {
-        "vscode": "^0.10.1"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:extension.wolfram"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.wolfram",
-                "title": "wolfram"
-            }
-        ]
-    },
-    "dependencies": {
-        "lodash": "^4.0.0",
-        "request": "2.67.x",
-        "vscode": "0.10.x",
-        "xml2js": "0.4.x"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Lidfalk/wolfram-vscode-plugin"
-    }
+  "name": "Wolfram",
+  "description": "Wolfram|Alpha plugin for VSCode",
+  "version": "0.1.2",
+  "publisher": "lidfalk",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.wolfram"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.wolfram",
+        "title": "wolfram"
+      }
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "request": "2.67.x",
+    "vscode": "0.10.x",
+    "xml2js": "0.4.x"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lidfalk/wolfram-vscode-plugin"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3"
+  }
 }
